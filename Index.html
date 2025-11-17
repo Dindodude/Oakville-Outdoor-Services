@@ -1,178 +1,287 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Oakville Outdoor Service</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oakville Outdoor Service</title>
 
-<style>
-body {
-margin: 0;
-font-family: Arial, sans-serif;
-background-color: #f4f8ff;
-color: #1a1a1a;
-}
+  <style>
+    /* ========== GLOBAL ========== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fa;
+      color: #111;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-/* HEADER */
-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 18px 40px;
-background-color: #1e4fa7; /* blue */
-color: white;
-position: sticky;
-top: 0;
-z-index: 1000;
-}
+    /* ========== HEADER ========== */
+    header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 72px;
+      background: #1e4fa7;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 28px;
+      z-index: 999;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+    }
 
-header img {
-height: 60px;
-}
+    header img {
+      height: 48px;
+      width: auto;
+      display: block;
+    }
 
-nav a {
-margin-left: 28px;
-color: white;
-text-decoration: none;
-font-weight: bold;
-font-size: 16px;
-}
+    nav {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+    }
 
-nav a:hover {
-text-decoration: underline;
-}
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 6px 8px;
+    }
 
-/* HERO SECTION */
-.hero {
-padding: 70px 40px;
-background: linear-gradient(to bottom right, #3d7ff2, #1e4fa7);
-color: white;
-text-align: center;
-}
+    nav a:hover, nav a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
 
-.hero h1 {
-font-size: 42px;
-margin-bottom: 15px;
-}
+    /* ========== HERO ========== */
+    .hero {
+      height: calc(90vh - 72px);
+      min-height: 380px;
+      background: url('https://images.unsplash.com/photo-1602351447937-7b44e6ab5f22?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: #fff;
+      margin-top: 0;
+    }
 
-.hero p {
-font-size: 18px;
-margin-bottom: 25px;
-}
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.42);
+    }
 
-.hero a {
-background-color: white;
-color: #1e4fa7;
-padding: 14px 26px;
-border-radius: 6px;
-font-weight: bold;
-text-decoration: none;
-font-size: 18px;
-}
+    .hero-inner {
+      position: relative;
+      text-align: center;
+      padding: 20px;
+      max-width: 980px;
+    }
 
-/* SECTION ANCHOR FIX */
-section {
-padding: 50px 40px;
-scroll-margin-top: 120px; /* FIXES anchor scroll issue */
-}
+    .hero h1 {
+      font-size: 46px;
+      margin-bottom: 12px;
+      text-shadow: 0 4px 16px rgba(0,0,0,0.45);
+    }
 
-h2 {
-font-size: 30px;
-margin-bottom: 10px;
-color: #1e4fa7;
-}
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+    }
 
-.service-item {
-margin-bottom: 25px;
-}
+    .btn-primary {
+      display: inline-block;
+      background: #2a74ff;
+      color: #fff;
+      padding: 12px 26px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform .14s ease, background .14s ease;
+    }
 
-.service-item h3 {
-margin-bottom: 5px;
-font-size: 20px;
-color: #1e4fa7;
-}
+    .btn-primary:hover { transform: translateY(-3px); background: #165ce0; }
 
-/* FOOTER */
-footer {
-background-color: #1e4fa7;
-color: white;
-padding: 25px 40px;
-text-align: center;
-}
+    /* ========== SECTIONS ========== */
+    main { max-width: 1100px; margin: 36px auto; padding: 0 20px 60px; }
+    section {
+      padding: 48px 0;
+      scroll-margin-top: 92px; /* offset for sticky header */
+    }
 
-footer a {
-color: white;
-text-decoration: underline;
-}
-</style>
+    h2 {
+      color: #1e4fa7;
+      font-size: 30px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .about-text {
+      max-width: 880px;
+      margin: 0 auto;
+      color: #333;
+      font-size: 17px;
+      text-align: center;
+    }
+
+    /* ========== SERVICES GRID ========== */
+    .services-grid {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .service-box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 22px rgba(6,24,60,0.06);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .service-box:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(6,24,60,0.09); }
+
+    .service-box h3 { color: #1e4fa7; margin-bottom: 8px; font-size: 20px; }
+
+    /* ========== CONTACT AREA ========== */
+    .contact-grid {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .contact-btn {
+      background: #fff;
+      color: #1e1e1e;
+      padding: 12px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 6px 20px rgba(6,24,60,0.06);
+    }
+
+    .contact-btn:hover { transform: translateY(-4px); }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: #1e4fa7;
+      color: #fff;
+      padding: 28px 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    footer a { color: #fff; text-decoration: underline; }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 720px) {
+      header { padding: 10px 16px; height: 64px; }
+      header img { height: 44px; }
+      .hero h1 { font-size: 30px; }
+      .hero p { font-size: 15px; }
+      .btn-primary { padding: 10px 18px; font-size: 16px; }
+      main { margin-top: 8px; }
+      section { padding: 38px 0; }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
-<header>
-<img src="https://raw.githubusercontent.com/Dindodude/Oakville-Outdoor-Services/b64f428a9325a210e4199315aecb25e9d3453d55/6DB25938-3969-4F6B-8794-7DD27180A93C.png" alt="Oakville Outdoor Service Logo">
-<nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="https://tally.so/r/Y5DKd6" target="_blank">Request Service</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
+  <!-- HEADER -->
+  <header>
+    <img
+      src="https://raw.githubusercontent.com/Dindodude/Oakville-Outdoor-Services/b64f428a9325a210e4199315aecb25e9d3453d55/6DB25938-3969-4F6B-8794-7DD27180A93C.png"
+      alt="Oakville Outdoor Service Logo"
+      loading="lazy"
+      width="180"
+      height="48"
+    >
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="https://tally.so/r/Y5DKd6" target="_blank" rel="noopener">Request Service</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<!-- HERO -->
-<div class="hero">
-<h1>Oakville Outdoor Service</h1>
-<p>Reliable • Fast • Local — Professional Snow Removal & Outdoor Services</p>
-<a href="https://tally.so/r/Y5DKd6" target="_blank">Request Service</a>
-</div>
+  <!-- HERO -->
+  <div class="hero" role="img" aria-label="Snowy driveway background">
+    <div class="hero-inner">
+      <h1>Oakville Outdoor Service</h1>
+      <p>Reliable • Fast • Local — Professional Snow Removal & Outdoor Services</p>
+      <a class="btn-primary" href="https://tally.so/r/Y5DKd6" target="_blank" rel="noopener">Request Service</a>
+    </div>
+  </div>
 
-<!-- ABOUT -->
-<section id="about">
-<h2>About Us</h2>
-<p>We are a local, student-run snow removal and outdoor services team serving all of Oakville.
-Fast, affordable, and reliable service for homes, townhouses, and businesses.</p>
-</section>
+  <main>
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Us</h2>
+      <p class="about-text">
+        We are a local, student-run snow removal and outdoor services team serving all of Oakville.
+        Fast, affordable, and reliable service for homes, townhouses, and businesses.
+      </p>
+    </section>
 
-<!-- SERVICES -->
-<section id="services">
-<h2>Our Services</h2>
+    <!-- SERVICES -->
+    <section id="services" aria-labelledby="services-heading">
+      <h2 id="services-heading">Our Services</h2>
 
-<div class="service-item">
-<h3>❄️ Driveway Clearing</h3>
-<p>Efficient snow removal for single, double, and extended driveways.</p>
-</div>
+      <div class="services-grid">
+        <div class="service-box">
+          <h3>❄️ Driveway Clearing</h3>
+          <p>Efficient snow removal for single, double, and extended driveways. Prompt, thorough, and safe.</p>
+        </div>
 
-<div class="service-item">
-<h3>🚶 Sidewalk & Walkway Clearing</h3>
-<p>Clearing city sidewalks, steps, porches, and front walkways.</p>
-</div>
+        <div class="service-box">
+          <h3>🚶 Sidewalk & Walkway Clearing</h3>
+          <p>Clearing city sidewalks, steps, porches, and front walkways to keep your access safe and clear.</p>
+        </div>
 
-<div class="service-item">
-<h3>🧂 Salting</h3>
-<p>Ice prevention and safety salt available on request or included in packages.</p>
-</div>
+        <div class="service-box">
+          <h3>🧂 Salting</h3>
+          <p>Ice prevention and safety salt available on request or included in packages to reduce slips and falls.</p>
+        </div>
 
-<div class="service-item">
-<h3>📅 Seasonal & Per-Visit</h3>
-<p>Flexible plans depending on your needs and snowfall activity.</p>
-</div>
-</section>
+        <div class="service-box">
+          <h3>📅 Seasonal & Per-Visit</h3>
+          <p>Flexible plans: book a single visit after a storm or choose full-season coverage for peace of mind.</p>
+        </div>
+      </div>
+    </section>
 
-<!-- CONTACT -->
-<section id="contact">
-<h2>Contact Us</h2>
-<p><strong>Phone:</strong> <a href="tel:9055809902">905-580-9902</a></p>
-<p><strong>Email:</strong> <a href="mailto:oakvilleoutdoorservices@gmail.com">oakvilleoutdoorservices@gmail.com</a></p>
-<p><a href="https://tally.so/r/Y5DKd6" target="_blank">Request Service Form</a></p>
-</section>
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact Us</h2>
+      <div style="text-align:center; margin-top: 8px;">
+        <p><strong>Phone:</strong> <a href="tel:9055809902">905-580-9902</a></p>
+        <p><strong>Email:</strong> <a href="mailto:oakvilleoutdoorservices@gmail.com">oakvilleoutdoorservices@gmail.com</a></p>
+        <div class="contact-grid" style="margin-top:12px;">
+          <a class="contact-btn" href="tel:9055809902">📞 Call</a>
+          <a class="contact-btn" href="mailto:oakvilleoutdoorservices@gmail.com">📧 Email</a>
+          <a class="contact-btn" href="https://tally.so/r/Y5DKd6" target="_blank" rel="noopener">📝 Request Form</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<!-- FOOTER -->
-<footer>
-Oakville Outdoor Service © 2025 — Snow Removal & Outdoor Care
-<br><br>
-<a href="mailto:oakvilleoutdoorservices@gmail.com">oakvilleoutdoorservices@gmail.com</a>
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    Oakville Outdoor Service © 2025 — Snow Removal & Outdoor Care
+    <br><br>
+    <a href="mailto:oakvilleoutdoorservices@gmail.com">oakvilleoutdoorservices@gmail.com</a>
+  </footer>
 
 </body>
 </html>
