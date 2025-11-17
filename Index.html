@@ -3,77 +3,171 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Oakville Outdoor Services – Snow Removal</title>
-<link rel="stylesheet" href="style.css" />
+<title>Oakville Outdoor Service</title>
+
+<style>
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background-color: #f4f8ff;
+color: #1a1a1a;
+}
+
+/* HEADER */
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 18px 40px;
+background-color: #1e4fa7; /* blue */
+color: white;
+}
+
+header img {
+height: 60px;
+}
+
+nav a {
+margin-left: 28px;
+color: white;
+text-decoration: none;
+font-weight: bold;
+font-size: 16px;
+}
+
+nav a:hover {
+text-decoration: underline;
+}
+
+/* HERO SECTION */
+.hero {
+padding: 70px 40px;
+background: linear-gradient(to bottom right, #3d7ff2, #1e4fa7);
+color: white;
+text-align: center;
+}
+
+.hero h1 {
+font-size: 42px;
+margin-bottom: 15px;
+}
+
+.hero p {
+font-size: 18px;
+margin-bottom: 25px;
+}
+
+.hero a {
+background-color: white;
+color: #1e4fa7;
+padding: 14px 26px;
+border-radius: 6px;
+font-weight: bold;
+text-decoration: none;
+font-size: 18px;
+}
+
+/* SECTIONS */
+section {
+padding: 50px 40px;
+}
+
+h2 {
+font-size: 30px;
+margin-bottom: 10px;
+color: #1e4fa7;
+}
+
+.service-item {
+margin-bottom: 25px;
+}
+
+.service-item h3 {
+margin-bottom: 5px;
+font-size: 20px;
+color: #1e4fa7;
+}
+
+/* FOOTER */
+footer {
+background-color: #1e4fa7;
+color: white;
+padding: 25px 40px;
+text-align: center;
+}
+
+footer a {
+color: white;
+text-decoration: underline;
+}
+</style>
 </head>
 
 <body>
 
-<!-- HERO SECTION -->
-<header class="hero">
-<div class="overlay"></div>
-<div class="hero-content">
-<h1>Oakville Outdoor Services</h1>
-<p>Reliable • Fast • Local — Snow Removal for Driveways, Walkways & Sidewalks</p>
-<a href="https://tally.so/r/Y5DKd6" class="btn">Request Service</a>
-</div>
+<!-- HEADER -->
+<header>
+<img src="https://raw.githubusercontent.com/yourusername/yourrepo/main/logo.png" alt="Oakville Outdoor Service Logo">
+<nav>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="https://tally.so/r/Y5DKd6" target="_blank">Request Service</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
 
-<!-- ABOUT SECTION -->
-<section class="section">
+<!-- HERO -->
+<div class="hero">
+<h1>Oakville Outdoor Service</h1>
+<p>Reliable • Fast • Local — Professional Snow Removal & Outdoor Services</p>
+<a href="https://tally.so/r/Y5DKd6" target="_blank">Request Service</a>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
 <h2>About Us</h2>
-<p>
-We are a local, student-run snow removal team serving all of Oakville.
-We offer fast, reliable, and affordable snow clearing for homes, townhouses, and small businesses.
-</p>
+<p>We are a local, student-run snow removal and outdoor services team serving all of Oakville.
+Fast, affordable, and reliable service for homes, townhouses, and businesses.</p>
 </section>
 
-<!-- SERVICES SECTION -->
-<section class="section">
+<!-- SERVICES -->
+<section id="services">
 <h2>Our Services</h2>
 
-<div class="services-grid">
-
-<div class="service-box">
-<h3>❄ Driveway Clearing</h3>
-<p>Efficient snow shoveling for single, double, and extended driveways.</p>
+<div class="service-item">
+<h3>❄️ Driveway Clearing</h3>
+<p>Efficient snow removal for single, double, and extended driveways.</p>
 </div>
 
-<div class="service-box">
+<div class="service-item">
 <h3>🚶 Sidewalk & Walkway Clearing</h3>
-<p>City sidewalk, steps, front walkways, and porch clearing.</p>
+<p>Clearing city sidewalks, steps, porches, and front walkways.</p>
 </div>
 
-<div class="service-box">
+<div class="service-item">
 <h3>🧂 Salting</h3>
-<p>Ice prevention and safety salt on request or included in packages.</p>
+<p>Ice prevention and safety salt available on request or included in packages.</p>
 </div>
 
-<div class="service-box">
+<div class="service-item">
 <h3>📅 Seasonal & Per-Visit</h3>
-<p>Flexible plans depending on your needs and snow activity.</p>
-</div>
-
+<p>Flexible plans depending on your needs and snowfall activity.</p>
 </div>
 </section>
 
-<!-- CTA -->
-<section class="section cta">
-<a href="https://tally.so/r/Y5DKd6" class="btn large">Request Service</a>
-<div class="contact-options">
-<a href="tel:9055809902" class="contact-btn">📞 Call Us</a>
-<a href="mailto:oakvilleoutdoorservices@gmail.com" class="contact-btn">✉ Email Us</a>
-</div>
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Us</h2>
+<p><strong>Phone:</strong> <a href="tel:9055809902">905-580-9902</a></p>
+<p><strong>Email:</strong> <a href="mailto:oakvilleoutdoorservices@gmail.com">oakvilleoutdoorservices@gmail.com</a></p>
+<p><a href="https://tally.so/r/Y5DKd6" target="_blank">Request Service Form</a></p>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
-<p>Oakville Outdoor Services – Snow Removal</p>
-<p>
-📞 <a href="tel:9055809902">905-580-9902</a> •
-✉ <a href="mailto:oakvilleoutdoorservices@gmail.com">oakvilleoutdoorservices@gmail.com</a>
-</p>
-<p>© 2025 Oakville Outdoor Services</p>
+<footer>
+Oakville Outdoor Service © 2025 — Snow Removal & Outdoor Care
+<br><br>
+<a href="mailto:oakvilleoutdoorservices@gmail.com">oakvilleoutdoorservices@gmail.com</a>
 </footer>
 
 </body>
