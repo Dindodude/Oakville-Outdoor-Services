@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oakville Outdoors Snow Removal</title>
+<style>
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: #f3f7fa;
+color: #111;
+}
+
+/* HERO SECTION */
+.hero {
+background: url('https://images.unsplash.com/photo-1602351447937-7b44e6ab5f22?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat;
+padding: 120px 20px;
+text-align: center;
+color: white;
+}
+
+.hero h1 {
+font-size: 48px;
+margin-bottom: 10px;
+text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.hero p {
+font-size: 20px;
+margin-bottom: 25px;
+text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.btn {
+background: #2a74ff;
+padding: 15px 25px;
+border-radius: 8px;
+text-decoration: none;
+color: white;
+font-size: 18px;
+transition: 0.2s;
+}
+
+.btn:hover {
+background: #165ce0;
+}
+
+/* SECTIONS */
+.section {
+max-width: 900px;
+margin: 50px auto;
+padding: 0 20px;
+}
+
+.section h2 {
+font-size: 32px;
+margin-bottom: 20px;
+}
+
+.services {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 25px;
+}
+
+.service-box {
+background: white;
+padding: 20px;
+border-radius: 12px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.footer {
+margin-top: 60px;
+padding: 30px;
+text-align: center;
+background: #e8eff7;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+<h1>Oakville Outdoors Snow Removal</h1>
+<p>Fast • Reliable • Student-Run · Driveways · Sidewalks · Salting</p>
+<a class="btn" href="https://request.oakvilleoutdoors.ca">Request Service</a>
+</div>
+
+<!-- ABOUT -->
+<div class="section">
+<h2>About Us</h2>
+<p>
+We are a local, student-run snow removal team serving all of Oakville.
+We offer fast, reliable, and affordable snow clearing for homes and small businesses.
+We show up early, don't miss storms, and focus on customer satisfaction.
+</p>
+</div>
+
+<!-- SERVICES -->
+<div class="section">
+<h2>Our Services</h2>
+
+<div class="services">
+
+<div class="service-box">
+<h3>✔ Driveway Clearing</h3>
+<p>Quick, dependable snow shoveling for single, double, and extended driveways.</p>
+</div>
+
+<div class="service-box">
+<h3>✔ Sidewalk & Walkway Clearing</h3>
+<p>Front walkway, city sidewalk, steps, and porch clearing included.</p>
+</div>
+
+<div class="service-box">
+<h3>✔ Salting Service</h3>
+<p>Eco-friendly salt available on request or included in seasonal packages.</p>
+</div>
+
+<div class="service-box">
+<h3>✔ Seasonal & Per-Visit Plans</h3>
+<p>Flexible options depending on your needs and schedule.</p>
+</div>
+
+</div>
+</div>
+
+<!-- CONTACT BUTTON -->
+<div class="section" style="text-align:center;">
+<a class="btn" href="https://request.oakvilleoutdoors.ca">Request Service</a>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+Oakville Outdoors Snow Removal<br>
+📞 647-XXX-XXXX &nbsp; • &nbsp; 📧 yourname@oakvilleoutdoors.ca<br>
+© 2025 Oakville Outdoors
+</div>
+
+</body>
+</html>
+
