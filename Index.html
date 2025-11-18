@@ -4,353 +4,197 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Oakville Outdoor Service</title>
-
-  <style>
-    /* ========== GLOBAL ========== */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f7fa;
-      color: #111;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ========== HEADER ========== */
-    header {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      background: #1e4fa7;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 22px;
-      height: 70px;
-      z-index: 1000;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-    }
-
-    header img {
-      height: 46px;
-      width: auto;
-    }
-
-    nav {
-      display: flex;
-      gap: 16px;
-    }
-
-    nav a {
-      color: white;
-      font-weight: bold;
-      font-size: 15px;
-      text-decoration: none;
-      padding: 6px 8px;
-    }
-
-    /* MOBILE NAV HIDE (auto-handled for now) */
-    @media(max-width: 650px) {
-      nav a {
-        font-size: 14px;
-        padding: 4px;
-      }
-      header {
-        padding: 10px 14px;
-      }
-      header img {
-        height: 40px;
-      }
-    }
-
-    /* ========== HERO ========== */
-    .hero {
-      height: 80vh;
-      background: url('https://images.unsplash.com/photo-1602351447937-7b44e6ab5f22?auto=format&fit=crop&w=1600&q=60')
-      center/cover no-repeat;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.45);
-    }
-
-    .hero-inner {
-      position: relative;
-      text-align: center;
-      color: white;
-      max-width: 900px;
-      padding: 20px;
-    }
-
-    .hero h1 {
-      font-size: 46px;
-      margin-bottom: 12px;
-      text-shadow: 0 3px 10px rgba(0,0,0,0.5);
-    }
-
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 25px;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    }
-
-    .btn-primary {
-      background: #2a74ff;
-      padding: 12px 26px;
-      border-radius: 10px;
-      color: #fff;
-      font-weight: bold;
-      text-decoration: none;
-      display: inline-block;
-      transition: 0.15s;
-    }
-
-    .btn-primary:hover {
-      background: #165ce0;
-      transform: translateY(-3px);
-    }
-
-    /* MOBILE HERO TEXT */
-    @media(max-width: 650px) {
-      .hero h1 { font-size: 32px; }
-      .hero p { font-size: 15px; }
-      .btn-primary { padding: 10px 20px; font-size: 16px; }
-    }
-
-    /* ========== MAIN SECTIONS ========== */
-    main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    section {
-      padding: 40px 0;
-      text-align: center;
-      scroll-margin-top: 80px;
-    }
-
-    section h2 {
-      font-size: 30px;
-      color: #1e4fa7;
-      margin-bottom: 15px;
-    }
-
-    .about-text {
-      max-width: 820px;
-      margin: auto;
-      font-size: 17px;
-      color: #333;
-    }
-
-    /* ========== SERVICES GRID ========== */
-    .services-grid {
-      margin-top: 25px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
-    .service-box {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      transition: 0.15s;
-    }
-
-    .service-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 28px rgba(0,0,0,0.12);
-    }
-
-    .service-box h3 {
-      color: #1e4fa7;
-      margin-bottom: 8px;
-    }
-<!-- WHY CHOOSE US -->
-<section id="why-us" aria-labelledby="why-heading">
-  <h2 id="why-heading">Why Choose Us</h2>
-
-  <div style="
-    max-width: 900px;
-    margin: 20px auto;
-    font-size: 17px;
-    color: #333;
-    text-align: center;">
-    
-    <p>We take pride in offering reliable, fast, and friendly service that Oakville residents can count on.</p>
-
-    <div style="
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      margin-top: 30px;">
-      
-      <div style="background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 6px 20px rgba(6,24,60,0.06);">
-        <h3 style="color:#1e4fa7; margin-bottom:8px;">🚀 Fast Response Times</h3>
-        <p>We aim to clear your driveway and walkways quickly after snowfall.</p>
-      </div>
-
-      <div style="background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 6px 20px rgba(6,24,60,0.06);">
-        <h3 style="color:#1e4fa7; margin-bottom:8px;">📍 Local & Student-Run</h3>
-        <p>We serve Oakville with pride, offering reliable, hardworking service.</p>
-      </div>
-
-      <div style="background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 6px 20px rgba(6,24,60,0.06);">
-        <h3 style="color:#1e4fa7; margin-bottom:8px;">💰 Fair & Honest Pricing</h3>
-        <p>Affordable rates with flexible options for every household.</p>
-      </div>
-
-      <div style="background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 6px 20px rgba(6,24,60,0.06);">
-        <h3 style="color:#1e4fa7; margin-bottom:8px;">📞 Easy Communication</h3>
-        <p>Quick replies through call, text, or email — always reachable.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-    /* ========== CONTACT ========== */
-    .contact-grid {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
-
-    .contact-btn {
-      background: white;
-      padding: 12px 18px;
-      border-radius: 10px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-      text-decoration: none;
-      color: #111;
-      font-weight: bold;
-      transition: 0.15s;
-    }
-
-    .contact-btn:hover {
-      transform: translateY(-4px);
-    }
-
-    /* MOBILE CONTACT */
-    @media(max-width: 650px) {
-      .contact-btn {
-        width: 100%;
-        text-align: center;
-      }
-      .contact-grid {
-        flex-direction: column;
-      }
-    }
-
-    /* ========== FOOTER ========== */
-    footer {
-      background: #1e4fa7;
-      color: white;
-      padding: 28px 20px;
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    footer a {
-      color: #fff;
-      text-decoration: underline;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
   <!-- HEADER -->
   <header>
-    <img 
+    <img
       src="https://raw.githubusercontent.com/Dindodude/Oakville-Outdoor-Services/b64f428a9325a210e4199315aecb25e9d3453d55/6DB25938-3969-4F6B-8794-7DD27180A93C.png"
-      alt="Oakville Outdoor Service Logo">
-    <nav>
+      alt="Oakville Outdoor Service Logo"
+      loading="lazy"
+      width="180"
+      height="48"
+    >
+    <nav aria-label="Main navigation">
       <a href="#about">About</a>
       <a href="#services">Services</a>
-      <a href="https://tally.so/r/Y5DKd6" target="_blank">Request</a>
+      <a href="#how-it-works">How It Works</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <!-- HERO -->
-  <div class="hero">
+  <div class="hero" role="img" aria-label="Snowy driveway background">
     <div class="hero-inner">
       <h1>Oakville Outdoor Service</h1>
-      <p>Reliable • Fast • Local — Professional Snow Removal</p>
-      <a class="btn-primary" href="https://tally.so/r/Y5DKd6" target="_blank">Request Service</a>
+      <p>Reliable • Fast • Local — Professional Snow Removal & Outdoor Services</p>
+      <a class="btn-primary" href="https://tally.so/r/Y5DKd6" target="_blank" rel="noopener">Request Service</a>
     </div>
   </div>
 
   <main>
     <!-- ABOUT -->
-    <section id="about">
-      <h2>About Us</h2>
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Us</h2>
       <p class="about-text">
-        We are a local, student-run snow removal team serving Oakville.
-        Fast, affordable, and reliable service for homes, townhouses, and businesses.
+        We are a local, student-run snow removal and outdoor services team based in Oakville.
+        Our focus is simple: show up when promised, work carefully, and keep your driveway and walkways clear so you never stress about shovelling in the cold.
       </p>
     </section>
 
     <!-- SERVICES -->
-    <section id="services">
-      <h2>Our Services</h2>
+    <section id="services" aria-labelledby="services-heading">
+      <h2 id="services-heading">Our Snow Services</h2>
 
       <div class="services-grid">
-
         <div class="service-box">
           <h3>❄️ Driveway Clearing</h3>
-          <p>Single, double, extended driveways. Fast and reliable.</p>
+          <p>Single, double, and extended driveways cleared with care and attention to detail.</p>
         </div>
 
         <div class="service-box">
-          <h3>🚶 Sidewalk & Walkway</h3>
-          <p>Steps, porches, walkways, and city sidewalk clearing.</p>
+          <h3>🚶 Sidewalk & Walkway Clearing</h3>
+          <p>Steps, porches, walkways, and city sidewalks cleared on request.</p>
         </div>
 
         <div class="service-box">
           <h3>🧂 Salting</h3>
-          <p>Ice prevention and safety salt included or on request.</p>
+          <p>Ice prevention and salting available on request or included in select plans.</p>
         </div>
 
         <div class="service-box">
-          <h3>📅 Seasonal & Per-Visit</h3>
-          <p>Flexible booking options depending on snowfall.</p>
+          <h3>📅 One-Time & Seasonal</h3>
+          <p>We offer one-time service and seasonal coverage. Seasonal plans are currently unavailable but may return in future seasons.</p>
         </div>
+      </div>
+    </section>
 
+    <!-- HOW IT WORKS (3 STEP SECTION) -->
+    <section id="how-it-works" aria-labelledby="how-heading">
+      <h2 id="how-heading">How It Works</h2>
+      <p class="about-text">
+        We keep the process simple so you can get snow cleared without any stress.
+      </p>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <h3>1. Request Service</h3>
+          <p>Use our online request form, call, or email with your address and what you need cleared.</p>
+        </div>
+        <div class="step-card">
+          <h3>2. We Confirm Details</h3>
+          <p>We confirm pricing, timing, and any special requests like sidewalks, steps, or salting.</p>
+        </div>
+        <div class="step-card">
+          <h3>3. We Clear Your Snow</h3>
+          <p>Once roads are safe, we head out and clear your driveway and walkways thoroughly.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEET OWNER + SAFETY & QUALITY -->
+    <section id="owner" aria-labelledby="owner-heading">
+      <h2 id="owner-heading">Meet the Owner & Our Approach</h2>
+
+      <div class="owner-layout">
+        <article class="owner-card">
+          <h3>👤 Idrees – Owner & Operator</h3>
+          <p>
+            Oakville Outdoor Service is run by Idrees, a local student who started this business to offer reliable,
+            straightforward snow removal for families, neighbours, and small businesses in Oakville.
+          </p>
+          <p style="margin-top:8px;">
+            The goal is to combine professional communication with hard work: clear pricing, quick responses, and showing up when promised.
+            Every job is treated with care, whether it’s a single driveway or multiple visits over the winter.
+          </p>
+        </article>
+
+        <article class="owner-card">
+          <h3>🛟 Safety & Quality</h3>
+          <p>
+            Safety matters — for you and for us. We wait until roads are safe enough to travel, especially during heavy storms,
+            and we work carefully around vehicles, curbs, and garden edges.
+          </p>
+          <p style="margin-top:8px;">
+            Where requested, salting helps reduce ice and slips. We aim to clear snow as close to the surface as conditions safely allow,
+            without damaging your property. If anything is ever missed, you can reach out and we’ll work to make it right.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- GUARANTEE / SATISFACTION -->
+    <section id="guarantee" aria-labelledby="guarantee-heading">
+      <h2 id="guarantee-heading">Our Guarantee</h2>
+      <div class="guarantee-box">
+        <p>
+          We stand behind our work. If we ever miss a section that was agreed to be cleared, or something doesn’t look right,
+          contact us and we’ll do our best to come back and make it right as soon as possible — weather and road conditions permitting.
+        </p>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" aria-labelledby="reviews-heading">
+      <h2 id="reviews-heading">Reviews</h2>
+      <p class="about-text">
+        A couple of quick comments from people who have used our service:
+      </p>
+
+      <div class="reviews-grid">
+        <article class="review-card">
+          <p>“Good Service Thanks”</p>
+          <p class="review-name">— Edris</p>
+        </article>
+        <article class="review-card">
+          <p>“Good job Idrees.”</p>
+          <p class="review-name">— Atir</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SERVICE AREA MAP -->
+    <section id="area" aria-labelledby="area-heading">
+      <h2 id="area-heading">Service Area</h2>
+      <p class="about-text">
+        We serve almost all of Oakville and nearby neighbourhoods, focusing on local homes, townhouses, and small businesses.
+      </p>
+
+      <div class="map-container" aria-label="Map showing Oakville, Ontario">
+        <iframe 
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28875.897648475633!2d-79.735!3d43.446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b5d7f4b4e5ed9%3A0x5037b28c72311f0!2sOakville%2C%20ON!5e0!3m2!1sen!2sca!4v1700000000000">
+        </iframe>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p><strong>Phone:</strong> <a href="tel:9055809902">905-580-9902</a></p>
-      <p><strong>Email:</strong> <a href="mailto:oakvilleoutdoorservices@gmail.com">oakvilleoutdoorservices@gmail.com</a></p>
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact Us</h2>
+      <p class="about-text">
+        Have a question or want to book a visit? Reach out using any of the options below.
+      </p>
 
       <div class="contact-grid">
         <a class="contact-btn" href="tel:9055809902">📞 Call</a>
         <a class="contact-btn" href="mailto:oakvilleoutdoorservices@gmail.com">📧 Email</a>
-        <a class="contact-btn" href="https://tally.so/r/Y5DKd6" target="_blank">📝 Request Form</a>
+        <a class="contact-btn" href="https://tally.so/r/Y5DKd6" target="_blank" rel="noopener">📝 Request Form</a>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER + DISCLAIMER -->
   <footer>
-    Oakville Outdoor Service © 2025  
-    <br>
+    Oakville Outdoor Service © 2025 — Snow Removal for Oakville, ON<br />
     <a href="mailto:oakvilleoutdoorservices@gmail.com">oakvilleoutdoorservices@gmail.com</a>
+
+    <p class="disclaimer-text">
+      *We do our best to arrive promptly after snowfall. Severe weather, unsafe road conditions, or unexpected delays
+      may affect exact arrival times, but we always work to reach every scheduled property as soon as possible.*
+    </p>
   </footer>
 
 </body>
