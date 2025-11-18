@@ -467,4 +467,12 @@ body {
   .step-card,
   .review-card { text-align: left; }
 }
+/* NEW BACKGROUND COLOR */ 
+body {
+  background: #e8f1ff !important;
+}
+
+sections {
+  background: transparent;
+}
 
